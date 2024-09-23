@@ -1,0 +1,49 @@
+><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jshesap</title>
+    <script>
+        function Toplahesap(){
+        s1 =parseFloat(document.getElementById("sayi1").value );
+        s2 =parseFloat(document.getElementById("sayi2").value );
+        toplam = s1 + s2 ;
+        document.getElementById('sonuç').innerHTML=toplam;
+        }
+        function Çıkarhesap(){
+        s1 =parseFloat(document.getElementById("sayi1").value );
+        s2 =parseFloat(document.getElementById("sayi2").value );
+        toplam = s1 - s2 ;
+        document.getElementById('sonuç').innerHTML=toplam;
+        }
+        function çarphesap(){
+        s1 =parseFloat(document.getElementById("sayi1").value );
+        s2 =parseFloat(document.getElementById("sayi2").value );
+        toplam = s1 * s2 ;
+        document.getElementById('sonuç').innerHTML=toplam;
+        }
+        function bölhesap(){
+        s1 =parseFloat(document.getElementById("sayi1").value );
+        s2 =parseFloat(document.getElementById("sayi2").value );
+        toplam = s1 / s2 ;
+        document.getElementById('sonuç').innerHTML=toplam;
+
+
+        }
+    </script>
+</head>
+<body>
+    <h2> Hesap Makinesi </h2>
+    <label for="">Sayı 1 </label>
+    <input type="text" name="" id="sayi1"> <br>
+
+    <label for="">Sayı 2</label>
+    <input type="text" name="" id="sayi2"> <br>
+    <div id="sonuç"></div>
+    <button onclick="Toplahesap()">Topla</button> 
+    <button onclick="Çıkarhesap()">Çıkar</button>
+    <button onclick="çarphesap()">Çarp</button>
+    <button onclick="bölhesap()">Böl</button>
+</body>
+</html>
