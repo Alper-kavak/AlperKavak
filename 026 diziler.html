@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const meyveler=['Muz','Kivi','Çilek','Şeftali','Mandalina','Kiraz'];
+
+
+        document.write("Dizinin ilk elemanı "+meyveler[0]+"<br>");
+        document.write("Dizinin ikinci elemanı "+meyveler[1]+"<br>");
+        Meyveler();
+        function Meyveler(){
+            document.write("Dizinin bütün elemanları "+meyveler+"<br>");
+            elemansayisi= meyveler.length;
+            document.write("Dizinin eleman sayısı " +elemansayisi+"<br>");
+        }
+      
+
+        function elemansilme(){
+            document.write("Diziden eleman siliyoruz "+"<br>");
+            meyveler.pop();
+            Meyveler();       
+
+        }
+        function elemanekleme(){
+            document.write("Diziye eleman ekliyoruz "+"<br>");
+            meyveler.push("Mango");
+            meyveler.push("Üzüm");
+            Meyveler();       
+       
+
+        }
+        function diziyikaydırma(){
+            document.write("Dizi kaydırma "+"<br>");
+            meyveler.shift();
+            Meyveler();
+        }
+
+    </script>
+</head>
+<body>
+    
+    <button onclick="elemansilme()">eleman sil</button>
+    <button onclick="elemanekleme()">eleman ekle</button>
+    <button onclick=" diziyikaydırma()">Diziyi kaydırma</button>
+
+</body>
+</html>

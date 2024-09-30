@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.write("Dizide eleman arama "+ "<br>")
+        const cicekler=['Lale','Gül','Menekşe'];
+        document.write("Dizinin bütün elemanları "+cicekler+"<br>");
+        let pozisyon1 = cicekler.indexOf("Gül")+1;
+        let pozisyon2 = cicekler.indexOf("Menekşe")+1;
+        document.write("Gülün pozisyonu "+pozisyon1+"<br>");
+        document.write("Menekşe pozisyonu "+pozisyon2+"<br>");
+
+        cicekler.push("Gül");
+        document.write("Dizinin bütün elemanları "+cicekler+"<br>");
+        let sonpozisyon = cicekler.lastIndexOf("Gül")+1;
+        document.write("Gülün sonpozisyonu "+sonpozisyon+"<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
