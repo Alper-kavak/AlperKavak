@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <style>
+        .sekil{
+            border-radius: 2px;
+            height: 30px;
+            width: 30px;
+            margin: 5px 10px 5px 10px;
+            padding: 15px 20px 15px 20px;
+            float: left;
+            background-color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="kutu1" class="sekil"></div>
+    <div id="kutu2" class="sekil"></div>
+    <div id="kutu3" class="sekil"></div>
+    <div id="kutu4" class="sekil"></div>
+    <div id="kutu5" class="sekil"></div>
+    <div id="kutu6" class="sekil"></div>
+    <button onclick="Hesapla()">Hesapla </button>
+    <script>
+        function Hesapla(){
+            for(i=1;i<=6;i++){
+            rastgele = Math.floor(Math.random(1)*49+1);
+            rastgele1 = Math.floor(Math.random(1)*255);
+            rastgele2 = Math.floor(Math.random(1)*255);
+            rastgele3 = Math.floor(Math.random(1)*255);
+
+            document.getElementById("kutu"+i).innerHTML=rastgele;
+            document.getElementById("kutu"+i).style.backgroundColor='rgb('+rastgele1 +', '+rastgele2 +', '+rastgele3+')';
+         }
+        }
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        randomsayi = Math.floor(Math.random(1)*100+1);
+        i=6
+        while(i>1){
+            tahmin = parseInt(prompt("Bir Sayı Giriniz "));
+            if(tahmin == randomsayi){
+                alert("Doğru bildiniz")
+                i=0     
+            }
+            else{
+                if(tahmin<randomsayi){
+                    alert("Daha yüksek giriniz")
+                }
+                if(tahmin>randomsayi){
+                    alert("Daha Düşük giriniz")
+                }
+                alert(i-2 +" Hakkınız kaldı")
+                i--;
+            }
+
+        }
+        alert("Oyun bitti "+randomsayi);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
