@@ -5,42 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
- #kart{       
+ #kart{      
         
         float: left;
         margin:10px;
         padding:20px;
         text-align:center;
         box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-        border-radius: 10px; 
+        border-radius: 10px;
+        max-width: 600px;
+        max-height: 180px; 
     }
+   
     #gorsel{
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        float: left;
+        max-width: 180px;
+        max-height: 180px;
+
+    }
+    #ozellikler{
         float: left;
     }
+    #fiyat{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    #buton{
+        margin:5px;
+        width: 200px;
+        height: 40px;
+    }
+    #buton:hover{
+        cursor: pointer;
+        background-color: grey;
+    }
+    
+
     </style>
    
 </head>
 <body>
     <div id="kart">
         <img src="resimler/laptop,.jfif" id="gorsel">        
-        <ul>
+        <ul id="ozellikler">
             <li>Ekran Boyutu: 15.6 inç</li>
             <li>Ram Bellek Boyutu: 8 GB</li>
             <li>İşlemci: İntel İ5-1334u</li>
             <li>Depolama Alanı: 512GB SSD</li>
-        </ul>
-          
+        </ul><br>
+        <div id="fiyat">₺19.999</div>
+          <button id="buton">SATIN AL</button>
     </div>
     <div id="kart">
         <img src="resimler/laptop2.jfif" id="gorsel">        
-        <ul>
+        <ul id="ozellikler">
             <li>Ekran Boyutu: 15.6 inç</li>
             <li>Ram Bellek Boyutu: 16 GB</li>
             <li>İşlemci: İntel İ5-13420h</li>
             <li>Depolama Alanı: 512GB SSD</li>
             <li>Ekran Kartı: RTX4050</li>
-        </ul>
-          
+        </ul><br>
+        <div id="fiyat">₺34.999</div>
+        <button id="buton">SATIN AL</button>          
     </div>
 </body>
 </html>

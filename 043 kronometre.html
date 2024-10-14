@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #zaman{
+            background-color: navy;
+            color: wheat;
+            text-align: center;
+            width: 200px;
+            height: 40px;
+           font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="zaman"></div>
+    <button onclick="baslat()">Başlat</button>
+    <button onclick="durdur()">durdur</button>
+
+    <script>
+        
+        dakika=0;
+        saniye=0;
+        msaniye=0
+        dakikaStr="";
+        saniyeStr="";
+        msaniyeStr="";
+        if(dakika<10){
+            dakikaStr="0"+dakika;            
+        }
+        if(saniye<10){
+            saniyeStr="0"+saniye;            
+        }
+        if(msaniye<10){
+            msaniyeStr="0"+msaniye;            
+        }
+        sayı=0;        
+        function baslat(){
+            setInterval(() => {
+        if(dakika<10){
+        dakikaStr="0"+dakika;            
+        }else dakikaStr=dakika;
+        if(saniye<10){
+            saniyeStr="0"+saniye;
+            
+        }else saniyeStr=saniye;
+        
+        if(msaniye){ 
+            msaniyeStr="0"+saniye;
+        }else msaniyeStr= msaniye;
+        document.getElementById("zaman").innerHTML=dakikaStr+":"+saniyeStr+":"+msaniye;
+       
+        if(msaniye==100){
+            msaniye=0;
+            saniye++;
+        }else msaniye++;
+        if(saniye==60){
+            saniye=0;
+            dakika++;
+        }    
+              
+        },10)
+        function durdur(){
+            clearInterval
+        }
+    }
+
+    </script>
+</body>
+</html>

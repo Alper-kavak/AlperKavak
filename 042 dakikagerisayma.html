@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #zaman{
+            background-color: navy;
+            color: wheat;
+            float: right;
+            width: 200px;
+            height: 40px;
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="zaman"></div>
+    <script>
+        dakika=0;
+        saniye=10;
+        dakikaStr="";
+        saniyeStr="";
+        if(dakika<10){
+            dakikaStr="0"+dakika;            
+        }
+        if(saniye<10){
+            saniyeStr="0"+saniye;            
+        }
+        setInterval(() => {
+            if(dakika<10){
+            dakikaStr="0"+dakika;
+            
+        }else dakikaStr=dakika;
+        if(saniye<10){
+            saniyeStr="0"+saniye;
+            
+        }else saniyeStr=saniye
+       
+        if(dakika==0 && saniye==0){
+            alert("Süre Bitti");
+        }
+        document.getElementById("zaman").innerHTML=dakikaStr+":"+saniyeStr;
+        if(saniye==0){
+            dakika--;
+            saniye=59
+        }else saniye--; } ,1000 )
+    </script>
+</body>
+</html>

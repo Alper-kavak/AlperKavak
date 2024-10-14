@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="renk" id="yesil">
+    Yeşil <br>
+    <input type="radio" name="renk" id="mavi">
+    Mavi <br>
+    <input type="radio" name="renk" id="kırmızı">
+    Kırmızı <br>
+    <button onclick="renkdegis()">Renk değiş</button>
+    <script>
+        function renkdegis(){
+            if(document.getElementById("yesil").checked==true){
+            document.getElementsByTagName("body")[0].style.backgroundColor="green";
+            document.getElementsByTagName("body")[0].style.color="white";
+        }
+        else if(document.getElementById("mavi").checked==true){
+            document.getElementsByTagName("body")[0].style.backgroundColor="blue";
+            document.getElementsByTagName("body")[0].style.color="white";
+        }
+        else if(document.getElementById("kırmızı").checked==true){
+            document.getElementsByTagName("body")[0].style.backgroundColor="red";
+            document.getElementsByTagName("body")[0].style.color="white";
+        }
+        }
+       
+    </script>
+</body>
+</html>
