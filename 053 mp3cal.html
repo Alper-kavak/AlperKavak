@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #zaman{
+            width: 390px;
+            height: 100px;
+            margin: auto;
+            background-color: green;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+       
+        if(dakika<10){
+            dakikaStr="0"+dakika;            
+        }
+        if(saniye<10){
+            saniyeStr="0"+saniye;            
+        }
+        function muzikcal(){
+            var audio = new Audio('media/muzik.mp3');
+            audio.loop = false;
+            audio.play();
+        }
+        let dakika = 1;
+        function baslat(){
+            dakika =parseInt(document.getElementById("sure").value);    
+            saniye=0;
+            dakikaStr="";
+            saniyeStr="";
+            if(dakika<10)dakikaStr= "0"+dakika;
+            if(saniye<10)saniyeStr= "0"+saniye;
+
+            document.getElementById("zaman").innerHTML=dakikaStr+":"+saniyeStr;
+
+            const sonuc = setInterval(gerisay(),1000);
+            document.getElementById("mesaj").innerHTML="Lütfen telefon bakma";
+        }
+        function gerisay(){
+        if(dakika<10){
+            dakikaStr="0"+dakika;
+            
+           }else dakikaStr=dakika;
+        if(saniye<10){
+            saniyeStr="0"+saniye;
+            
+        }else saniyeStr=saniye
+       
+        if(dakika==0 && saniye==0){
+            document.getAnimations("zaman").innerHTML="süre bitti"
+
+            clearInterval(sonuc);
+        }
+        document.getElementById("zaman").innerHTML=dakikaStr+":"+saniyeStr;
+        if(saniye==0){
+            dakika--;
+            saniye=59
+        }else saniye--;
+            
+    }
+        
+    </script>
+    <label for="">Süre Giriniz dk</label>
+    <input type="text" name="sure" value="25" id="sure" minlength="1" maxlength="2">
+
+    <button onclick="baslat()">Başlat</button>
+    <br>
+    <div id="zaman"></div>
+    <div id="mesaj"></div>
+</body>
+</html>

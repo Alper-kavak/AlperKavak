@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+    #karesonuc{
+        background-color: blueviolet;
+        color: white;
+        margin: 10px;padding: 10px;
+        width: 200px;
+    }
+    #kupsonuc{
+        background-color: blue;
+        color: white;
+        margin: 10px;padding: 10px;
+        width: 200px;
+    }
+    </style>
+    <script>
+        function islemyap(nesne){
+            x=nesne.value;
+            karesi = x*x;
+            kupu = x*x*x;
+            document.getElementById("karesonuc").innerHTML=karesi;
+            document.getElementById("kupsonuc").innerHTML=kupu
+        }
+    </script>
+</head>
+<body>
+    <form >
+        <input type="text" id="sayi" value="0" onkeyup="islemyap(this)">
+        <div id="karesonuc">0</div>
+        <div id="kupsonuc">0</div>
+    </form>
+    
+</body>
+</html>

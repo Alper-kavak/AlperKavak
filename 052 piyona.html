@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="potre"></h2>
+    <button onclick="melodibaslat()">Melodi Başlat</button>
+    <button onclick="melodidurdur()">Melodi durdur</button>
+
+    <script>
+        function melodibaslat(){
+            var notalar=["do","re","mi","fa","sol","la","si"
+        ]
+        metronom=setInterval(() => {           
+         
+           rastgele=Math.floor(Math.random() * 7);
+           document.getElementById("potre").innerText+=notalar[rastgele] +"_";
+        }, 2000);
+}
+    function melodidurdur(){
+        clearInterval(metronom);
+    }
+    </script>
+</body>
+</html>
