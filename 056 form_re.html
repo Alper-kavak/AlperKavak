@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            color: rgb(27, 26, 26);
+            font-size: 22px;
+        }
+        form{
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+        }
+        body{
+            background-color: gray;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        select,
+        textarea{
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0;
+            border: 1px solid;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        select{
+           width: 100%;
+           padding: 12px;
+           margin: 5px 0;
+           border: 1px solid #ccc;
+           border-radius: 8px;
+           box-sizing: border-box;
+           background-color: #fff;
+           appearance: none;
+           -webkit-appearance: none;
+           -moz-appearance: none;
+        }
+        textarea{
+            resize: vertical;
+        }
+        input[type="submit"],
+        input[type="reset"],
+        input[type="checkbox"] {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        input[type="checkbox"]:hover {
+            background-color: #034081;
+        }
+        .error-mesasge{
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+
+    </style>
+    <script>
+        function validateForm(){
+            const today = new Date();
+            const adi= document.getElementById("adi").value;
+            const soyadi= document.getElementById("soyadi").value;
+            const eposta= document.getElementById("eposta").value;
+            const sifre= document.getElementById("sifre").value;
+            const tsifre= document.getElementById("tsifre").value;
+            const onay= document.getElementById("onay").checked;
+            const dogumgunu = document.getElementById("dogumgunu").value;
+            const telno = document.getElementById("telno").value;
+
+    
+            //Hatalar
+    
+            const erroradi = document.getElementById("adi-error");
+            const errorsoyadi = document.getElementById("soyadi-error");
+            const erroreposta = document.getElementById("eposta-error");
+            const errorsifre = document.getElementById("sifre-error");
+            const errortsifre = document.getElementById("tsifre-error");
+            const erroronay = document.getElementById("onay-error");
+            const errordogumgunu = document.getElementById("dogumgunu-error");
+            const errortelno = document.getElementById("telno-error");
+
+
+
+            erroradi.textContent="";
+            errorsoyadi.textContent="";
+            erroreposta.textContent="";
+            errorsifre.textContent="";
+            errortsifre.textContent="";
+            erroronay.textContent="";
+            errordogumgunu.textContent="";
+            erroronay.textContent =
+            errortelno.textContent="";
+            let isValid = true; // Varsayılan olarak Geçerli
+
+    if (adi === "" || /\d/.test(adi)) {
+        erroradi.textContent =
+            "Lütfen adı alanını kurallara göre doldurunuz.";
+        isValid = false;
+    }
+
+    if (soyadi === "" || /\d/.test(soyadi)) {
+        errorsoyadi.textContent =
+            "Lütfen soyadı alanını kurallara göre doldurunuz.";
+        isValid = false;
+    }
+
+
+    if (eposta === "" || !eposta.includes("@")) {
+        erroreposta.textContent =
+            "Lütfen e-posta alanını kurallara göre doldurunuz.";
+        isValid = false;
+    }
+
+    if (sifre === "" || sifre.length < 6) {
+        errorsifre.textContent ="Lütfen şifreyi en az 6 karakter giriniz.";
+        isValid = false;
+    }
+
+    if (sifre!=tsifre){
+
+        errortsifre.textContent="Şifreler uyuşmuyor. "
+        isValid=false;
+    }
+
+    if (dogumgunu === "") {
+        errordogumgunu.textContent =
+            "Lütfen Doğum Tarihini Yazınız";
+        isValid = false;
+    }
+    
+    if (!onay) {
+        erroronay.textContent =
+            "Lütfen onay kutusunu işaretleyiniz.";
+        isValid = false;
+    }
+    if (telno === "" || telno.length < 12) {
+        errortelno.textContent ="Lütfen telefonu en az 11 karakter giriniz.";
+        isValid = false;
+    }
+    
+
+    return isValid;
+    
+    }
+    </script>
+</head>
+<body>
+    <form name="kayitform" onsubmit=" return validateForm()">
+        <table  id="form" align="center">
+        <tr>
+            <td colspan="2" align="center"> <h1>E-Ticaret Üye Kayıt</h1></td>
+        </tr>
+        <tr>
+            <td>Adi: </td>
+            <td><input type="text" name="adi" id="adi" minlength="2" maxlength="10">
+                <span id="adi-error" class="error-mesasge"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Soyadi: </td>
+            <td><input type="text" name="soyadi" id="soyadi" minlength="2" maxlength="10" >
+                <span id="soyadi-error" class="error-mesasge"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>E-Posta: </td>
+            <td><input type="email" id="eposta" >
+                <span id="eposta-error" class="error-mesasge"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Telefon Numarası</td>
+            <td><input type="text" name="telno" id="telno">
+                <span id="telno-error" class="error-mesasge"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Şifre</td>
+            <td><input type="password" name="sifre" id="sifre"  >
+                <span id="sifre-error" class="error-mesasge"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Tekrar Şifre</td>
+            <td><input type="password" name="tsifre" id="tsifre"  >
+                <span id="tsifre-error" class="error-mesasge"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Cinsiyet</td>
+            <td>
+                <input type="radio" name="Cinsiyet" id="erkek" checked>Erkek
+                <input type="radio" name="Cinsiyet" id="kadın">Kadın
+            </td>
+        </tr>
+        <tr>
+            <td>Doğum Günü</td>
+            <td><input type="date" name="dogumgunu" id="dogumgunu">
+                <span id="dogumgunu-error" class="error-mesasge"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Dogum Yeri</td>
+            <td>
+                <select name="dyeri" id="dyeri">
+                    <option value="0" selected>------</option>
+                    <option value="1">Adana</option>
+                    <option value="2">Adıyaman</option>
+                    <option value="3">Afyonkarahisar</option>
+                    <option value="4">Ağrı</option>
+                    <option value="5">Amasya</option>
+                    <option value="6">Ankara</option>
+                    <option value="7">Antalya</option>
+                    <option value="8">Artvin</option>
+                    <option value="9">Aydın</option>
+                    <option value="10">Balıkesir</option>
+                    <option value="11">Bilecik</option>
+                    <option value="12">Bingöl</option>
+                    <option value="13">Bitlis</option>
+                    <option value="14">Bolu</option>
+                    <option value="15">Burdur</option>
+                    <option value="16">Bursa</option>
+                    <option value="17">Çanakkale</option>
+                    <option value="18">Çankırı</option>
+                    <option value="19">Çorum</option>
+                    <option value="20">Denizli</option>
+                    <option value="21">Diyarbakır</option>
+                    <option value="22">Edirne</option>
+                    <option value="23">Elazığ</option>
+                    <option value="24">Erzincan</option>
+                    <option value="25">Erzurum</option>
+                    <option value="26">Eskişehir</option>
+                    <option value="27">Gaziantep</option>
+                    <option value="28">Giresun</option>
+                    <option value="29">Gümüşhane</option>
+                    <option value="30">Hakkâri</option>
+                    <option value="31">Hatay</option>
+                    <option value="32">Isparta</option>
+                    <option value="33">Mersin</option>
+                    <option value="34">İstanbul</option>
+                    <option value="35">İzmir</option>
+                    <option value="36">Kars</option>
+                    <option value="37">Kastamonu</option>
+                    <option value="38">Kayseri</option>
+                    <option value="39">Kırklareli</option>
+                    <option value="40">Kırşehir</option>
+                    <option value="41">Kocaeli</option>
+                    <option value="42">Konya</option>
+                    <option value="43">Kütahya</option>
+                    <option value="44">Malatya</option>
+                    <option value="45">Manisa</option>
+                    <option value="46">Kahramanmaraş</option>
+                    <option value="47">Mardin</option>
+                    <option value="48">Muğla</option>
+                    <option value="49">Muş</option>
+                    <option value="50">Nevşehir</option>
+                    <option value="51">Niğde</option>
+                    <option value="52">Ordu</option>
+                    <option value="53">Rize</option>
+                    <option value="54">Sakarya</option>
+                    <option value="55">Samsun</option>
+                    <option value="56">Siirt</option>
+                    <option value="57">Sinop</option>
+                    <option value="58">Sivas</option>
+                    <option value="59">Tekirdağ</option>
+                    <option value="60">Tokat</option>
+                    <option value="61">Trabzon</option>
+                    <option value="62">Tunceli</option>
+                    <option value="63">Şanlıurfa</option>
+                    <option value="64">Uşak</option>
+                    <option value="65">Van</option>
+                    <option value="66">Yozgat</option>
+                    <option value="67">Zonguldak</option>
+                    <option value="68">Aksaray</option>
+                    <option value="69">Bayburt</option>
+                    <option value="70">Karaman</option>
+                    <option value="71">Kırıkkale</option>
+                    <option value="72">Batman</option>
+                    <option value="73">Şırnak</option>
+                    <option value="74">Bartın</option>
+                    <option value="75">Ardahan</option>
+                    <option value="76">Iğdır</option>
+                    <option value="77">Yalova</option>
+                    <option value="78">Karabük</option>
+                    <option value="79">Kilis</option>
+                    <option value="80">Osmaniye</option>
+                    <option value="81">Düzce</option> 
+            </td>               
+
+        </tr>
+        <tr>
+            <td>Adres</td>
+            <td><textarea name="adres" id="adres" cols="30" rows="5"></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="checkbox" id="onay" >Bilgilerin doğruluğunu kabul ediyorum
+                <span id="onay-error" class="error-mesasge"></span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" id="kaydet" name="Kaydet" value="Kaydet">
+                <input type="reset" id="temizle" name="Temizle" value="Temizle">
+
+            </td>
+        </tr>
+    </table>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+           const input = document.querySelector("#telefon");
+               input.addEventListener('input', (e) => {
+                   if (e.target.value)
+                   {
+                       const x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+                       e.target.value =  + x[1] + (x[2] ? `-${x[2]}` : '') + (x[3] ? `-${x[3]}` : '')+ (x[4] ? `-${x[4]}` : '')
+                   }
+               });
+           });
+       
+       </script>
+</form>
+
+</body>
+</html>
