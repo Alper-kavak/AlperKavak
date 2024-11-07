@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dikey Slayt</title>
+    <style>
+    body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    }
+    .slayt-container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.slayt {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    background-color: #fff;
+    transition: transform 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.slayt.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slayt:not(.active) {
+    transform: translateY(-100%);
+}
+
+button {
+    height: 20px;
+    width: 120px;
+    margin: 10px;
+    padding: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="slayt-container">
+        <img src="resimler/atatürk.jfif" alt="" class="slayt active">
+        <img src="resimler/atatürk1.jfif" alt="" class="slayt">
+        <img src="resimler/atatürk2.jfif" alt=""id="slayt2" class="slayt">
+    </div>
+    <button class="prev" onclick="prevSlide()">Önceki</button>
+    <button class="next" onclick="nextSlide()">Sonraki</button>
+
+    <script >
+        let currentSlide = 0;
+const slides = document.querySelectorAll('.slayt');
+
+function showSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (index + slides.length) % slides.length; // Döngüsel gösterim
+    slides[currentSlide].classList.add('active');
+}
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+    showSlide(currentSlide - 1);
+}
+setInterval(nextSlide, 3000);
+    </script>
+</body>
+</html>
