@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alışveriş Sitesi</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    }
+    header {
+    background-color: #be7d1b;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    }   
+    ul {
+    list-style-type: none;
+    padding: 0;
+    }
+
+    ul li {
+    display: inline;
+    margin: 0 5px;
+    }
+   
+
+    ul li a {
+    color: white;
+    text-decoration: none;
+    }
+
+    .product {
+    padding: 20px;
+    text-align: center;
+    }
+
+    .product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    }
+    .product-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    margin: 5px;
+    padding: 5px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    #ürün :hover{
+        background-color: gray;
+        cursor: pointer;
+    }
+    #baslık{
+        font-size: 50px;
+    }
+    
+
+    .price {
+    font-weight: bold;
+    }
+
+    footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #d4850f;
+    color: white;
+    bottom: 0;
+    width: 100%;
+    }  
+    img{
+        max-width: 200px;
+        max-height: 200px;
+    }
+    
+
+    </style>
+</head>
+<body>
+    <header>
+            <ul>
+                <li id="baslık"><a href="#">CoguBurada</a></li>
+                <li><form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn " type="submit">Search</button>
+                  </form></li>
+            </ul>
+    </header>
+
+
+    <main>
+        <section class="product">
+            <h2>Popüler Ürünler</h2>
+            <div class="product-list" id="ürün">
+                <div class="product-item">
+                    <img src="resimler/laptop,.jfif" alt="Laptop ">
+                    <h3>Laptop Modeli 1</h3>
+                    <p>Özellikler: Intel i5, 8GB RAM, 256GB SSD</p>
+                    <p class="price">Fiyat: 25000 TL</p>
+                </div>
+                <div class="product-item">
+                    <img src="resimler/ürün1.PNG" alt="Suluk">
+                    <h3>Suluk</h3>
+                    <p>Isı geçirmez termos yerine kullanıylanilir</p>
+                    <p class="price">Fiyat: 1500 TL</p>
+                </div>
+                <div class="product-item">
+                    <img src="resimler/ürün2.PNG" alt="Zıbın">
+                    <h3>Zıbın</h3>
+                    <p>2-3 Yaş bebekler için Zıbın</p>
+                    <p class="price">Fiyat: 400 TL</p>
+                </div>
+                <div class="product-item">
+                    <img src="resimler/ürün3.PNG" alt="Mouse">
+                    <h3>AJ Mouse</h3>
+                    <p>Kablosuz Mouse,Manyetik Sarj İstasyonu</p>
+                    <p class="price">Fiyat: 4000 TL</p>
+                </div>
+                <div class="product-item">
+                    <img src="resimler/ürün4.PNG" alt="Makinesi">
+                    <h3>Türk Kahvesi Makinesi</h3>
+                    <p>4 Fincan kahveyi 5 Dakikada yapan Kahve Makinesi</p>
+                    <p class="price">Fiyat: 1000 TL</p>
+                </div>
+            </div>
+        </section>
+        <section class="product">
+            <div class="product-list" id="ürün">
+                <div class="product-item">
+                    <img src="resimler/laptop,.jfif" alt="Laptop ">
+                    <h3>Laptop Modeli 1</h3>
+                    <p>Özellikler: Intel i5, 8GB RAM, 256GB SSD</p>
+                    <p class="price">Fiyat: 25000 TL</p>
+                </div>
+                <div class="product-item">
+                    <img src="resimler/ürün1.PNG" alt="Suluk">
+                    <h3>Suluk</h3>
+                    <p>Isı geçirmez termos yerine kullanıylanilir</p>
+                    <p class="price">Fiyat: 1500 TL</p>
+                </div>
+                <div class="product-item">
+                    <img src="resimler/ürün2.PNG" alt="Zıbın">
+                    <h3>Zıbın</h3>
+                    <p>2-3 Yaş bebekler için Zıbın</p>
+                    <p class="price">Fiyat: 400 TL</p>
+                </div>
+                <div class="product-item">
+                    <img src="resimler/ürün3.PNG" alt="Mouse">
+                    <h3>AJ Mouse</h3>
+                    <p>Kablosuz Mouse,Manyetik Sarj İstasyonu</p>
+                    <p class="price">Fiyat: 4000 TL</p>
+                </div>
+                <div class="product-item">
+                    <img src="resimler/ürün4.PNG" alt="Makinesi">
+                    <h3>Türk Kahvesi Makinesi</h3>
+                    <p>4 Fincan kahveyi 5 Dakikada yapan Kahve Makinesi</p>
+                    <p class="price">Fiyat: 1000 TL</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ÇoguBurada Alışveriş Sitesi. Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>

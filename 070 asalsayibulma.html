@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asal Sayıları Bul</title>
+    <script>
+        // Asal sayı kontrolü yapan fonksiyon
+        function asalMi(sayi) {
+            if (sayi <= 1) return false;  // 1 ve daha küçük sayılar asal değildir
+            for (let i = 2; i <= Math.sqrt(sayi); i++) {
+                if (sayi % i === 0) return false;  // Eğer sayı i'ye bölünüyorsa asal değildir
+            }
+            return true;  // Eğer bölünmediyse asal sayıdır
+        }
+
+        function asalSayilariBul() {
+            let sayi1 = parseInt(document.getElementById("sayi1").value);
+            let sayi2 = parseInt(document.getElementById("sayi2").value);
+
+           
+
+            let asalSayilar = [];
+
+            // Asal sayıları bulma işlemi
+            for (let i = sayi1 + 1; i < sayi2; i++) {
+                if (asalMi(i)) {
+                    asalSayilar.push(i);
+                }
+            }
+
+            // Sonuçları ekrana yazdırma
+            if (asalSayilar.length > 0) {
+                document.getElementById("sonuc").innerHTML = "Asal sayılar: " + asalSayilar.join(", ");
+            } else {
+                document.getElementById("sonuc").innerHTML = "Bu aralıkta asal sayı yok.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>İki sayı arasındaki asal sayıları bulun</h2>
+
+    <label for="sayi1">Birinci Sayı:</label>
+    <input type="number" id="sayi1" placeholder="Birinci sayıyı girin" required>
+    <br><br>
+
+    <label for="sayi2">İkinci Sayı:</label>
+    <input type="number" id="sayi2" placeholder="İkinci sayıyı girin" required>
+    <br><br>
+
+    <button onclick="asalSayilariBul()">Asal Sayıları Bul</button>
+
+    <p id="sonuc"></p>
+</body>
+</html>

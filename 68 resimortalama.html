@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şemsiye</title>
+    <style>
+
+        #semsiye{
+          margin:0;  
+        }
+    </style>
+
+    <script>
+        function sekilOrtala(){
+            //ekranGenislik=window.screen.width; //Tüm ekran genişliği
+            //ekranYukseklik=window.screen.height; //Tüm ekran yüksekliği
+            //alert(ekranGenislik+"x"+ekranYukseklik);
+            //body alanının genişlik ve yüksekliği altta-bize bu bilgi lazım
+            genislik= document.body.clientWidth;
+            yukseklik=document.body.clientHeight;
+           // alert(genislik+"x"+yukseklik);
+            //semsiye id'li resmin genişliğini öğreniyoruz
+            nesneGenislik=  document.getElementById("semsiye").style.width;
+            nesneYukseklik=  document.getElementById("semsiye").style.height;
+            //resmi sol boşluğunu hesaplıyoruz. 
+            solbosluk=(genislik-nesneGenislik)/2;
+            ustbosluk=(yukseklik-nesneYukseklik)/2;
+            document.getElementById("semsiye").style.marginLeft=solbosluk+"px";
+            document.getElementById("semsiye").style.marginTop=ustbosluk+"px";
+        }
+
+     
+        function semsiyeKapat(){
+            document.getElementById("semsiye").src ="resimler/semsiye_kapali.jpg";
+        }
+
+        function semsiyeAc(){
+            document.getElementById("semsiye").src ="resimler/semsiye_acik.jpg";
+        }
+        
+    </script>
+
+</head>
+<body onload="sekilOrtala()">
+
+    <img src="resimler/semsiye_acik.jpg" id="semsiye" onmousemove="semsiyeAc()" 
+    onmouseleave="semsiyeKapat()">
+
+    
+</body>
+</html>

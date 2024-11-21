@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function basla(){
+        let randomSayi = Math.floor(Math.random() * 100) + 1;
+        let randomSayi1 = Math.floor(Math.random() * 100) + 1;
+        document.getElementById("num1").value = randomSayi;
+        document.getElementById("num2").value = randomSayi1;
+        }
+        
+
+    </script>
+</head>
+<body onload="basla()">
+   <input type="text" name="kaan" id="num1" disabled>
+    <button id="isaret">+</button>
+ <input type="text" name="kaan" id="num2"disabled>
+    <button>=</button>
+    <input type="text" id="sonuc">
+    <button onclick="basla()">Başla</button>
+</body>
+</html>
