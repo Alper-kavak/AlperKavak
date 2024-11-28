@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Sayfa</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body{
+            background-color: rgb(109, 106, 106);
+        }
+        .footer{
+            height: 60px;
+            width: 100%;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+         #banner{
+            height: 60px;
+            width: 80%;
+            overflow: hidden;
+            text-align: center;
+            background-image: url(images.jfif);
+            margin-left: 10%;
+            margin-right: 10%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            background-color: rgb(184, 175, 175);
+            margin: 5px;
+
+        }
+        .content{
+            background-color: rgb(184, 175, 175);
+            height: 600px;
+            width: 80%;
+            overflow: hidden;
+            margin-left: 10%;
+            margin-right: 10%;
+            border-radius: 10px;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+        }
+        .menu{
+            width: 10%;            
+        }
+        .menuitem {
+            cursor: pointer;
+            padding: 2px;
+        }
+        .menuitem a{
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            font-family: "Lato", sans-serif;
+            font-weight: 700;
+          font-style: italic;
+        }
+        .menuitem:hover{
+            background-color: rgb(207, 192, 192);
+        }
+        
+        .banneryazi{
+            font-size: 20px;
+            line-height: 60px;
+        }
+        .bannerimg{
+            width: 80%;
+            max-height: 100%;
+        }
+        a{text-decoration: none;}
+        ul{list-style: none;}
+        .header{
+            background-color: black;
+            box-shadow: 1px 1px 5px 0px gray;
+            position: sticky;
+            top: 0;
+            width: 100%;
+        }
+        .logo{
+            display: inline-block;
+            color: wheat;
+            font-size: 40px;
+            margin-left: 10px;
+        }
+        .nav{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-color: black;
+            overflow: hidden;
+        }
+        
+        .nav{
+            max-height: 0;
+            transition: max-height .5s ease-out;
+        }
+        .subnav-content a{
+            display: block;
+            padding: 5px;
+            color: white;
+            opacity: 1;
+        }
+        .subnav-content a:hover{
+            text-decoration: underline;
+            transform: scale(1.05);
+            opacity: 1;
+        }
+        .hamb{
+            cursor: pointer;
+            float: right;
+            padding: 40px 20px;            
+        }
+        .hamb-line{
+            background-color: white;
+            display: block;
+            height: 2px;
+            position: relative;
+            width: 24px;
+        }
+        .hamb-line::before
+        .hamb-line::after{
+            background-color: wheat;
+            content: "";
+            display: block;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+
+        }
+        .hamb-line::before{
+            top: 5px;
+        }
+        .hamb-line::after{
+            top: -5px;
+        }
+        body:has(.slide-menu:checked){
+            overflow: hidden;
+        }
+        
+        .slide-menu:checked ~ nav{
+            max-height: 100%;
+        }
+        .slide-menu:checked ~ .hamb .hamb-line{background: transparent;}
+        .slide ~ .hamb .hamb-line::before{
+            transform: rotate(-45day);
+            top: 0;
+        }
+        .slide ~ .hamb .hamb-line::after{
+            transform: rotate(45day);
+            top: 0;
+        }
+       
+        .subnav:hover .subnav-content{
+            display: block;
+        }
+        @media(min-width: 768px) {
+            #banner{
+            height: 120px;
+            width: 80%;
+            overflow: hidden;
+            text-align: center;
+            background-image: url(images.jfif);
+            margin-left: 10%;
+            margin-right: 10%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+
+            }
+            .banneryazi{
+            font-size: 40px;
+            line-height: 120px;
+            }      
+            .bannerimg{
+            width: 80%;
+            max-height: 100%;
+            }
+            .nav{
+                max-height: none;
+                top: 0;
+                position: relative;
+                float: right;
+                width: fit-content;
+                background-color: transparent;
+            }
+            .hamb{
+                display: none;
+            }            
+            .subnav-content li{
+                float: left;
+                padding-left: 15px;
+            }
+            .subnav-content a:hover{
+                background-color: transparent;
+                color: gray;
+            }
+
+
+        }
+        @keyframes slideIn{
+            from{
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to{
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+    <header class="header" role="banner">
+        <a href="#" class="logo">Paylaştıkca</a>
+        <input type="checkbox" class="slide-menu" id="slide-menu">
+        <label class="hamb" for="slide-menu" aria-label="Menu"><span class="hamb-line"></span></label>
+        <nav class="nav">
+            <div class="subnav">
+            <ul class="subnav-content">
+                <li><a href="#Email">Email</a></li>
+                <li><a href="#Telefon">Telefon</a></li>
+                <li><a href="#Twitter">Twitter</a></li>
+                <li><a href="#Youtube">Youtube</a></li>
+        </ul>
+    </div>
+    </nav>
+    </header>
+    <div id="banner">
+        <span class="banneryazi">Paylaştıkca</span>
+    </div>
+    <div class="content">
+        <div class="menu">
+            <div class="menuitem"><a href="anasayfa.html" >AnaSayfa</a></div>
+            <div class="menuitem"><a href="hakkimizda.html">Hakkımızda</a></div>
+            <div class="menuitem"><a href="galeri.html" active>Galeri</a></div>
+            <div class="menuitem"><a href="iletişim.html">İletişim</a></div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024  Tüm hakları saklıdır.</p>
+      </footer>
+    </body>
+</html>
